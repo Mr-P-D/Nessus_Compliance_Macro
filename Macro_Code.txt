@@ -1,0 +1,41 @@
+Sub SUBS()
+    Range("B2").Select
+    ActiveCell.FormulaR1C1 = "=SUBSTITUTE(RC[-1],CHAR(10),""|"")"
+    Range("B2").Select
+    Selection.AutoFill Destination:=Range("B2:B18")
+    Range("B2:B18").Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+End Sub
+
+Sub Replace_for_Nessus()
+    Dim rng As Range, cell As Range
+    Set rng = Sheets("Sheet1").Range("B2:B18")
+    For Each cell In rng
+        cell = WorksheetFunction.Substitute(cell, "[FAILED]", "@")
+        cell = WorksheetFunction.Substitute(cell, "Rationale:", "@")
+        cell = WorksheetFunction.Substitute(cell, "Reference(s) :", "@")
+        cell = WorksheetFunction.Substitute(cell, "See Also :", "@")
+        cell = WorksheetFunction.Substitute(cell, "Solution : ", "@")
+        cell = WorksheetFunction.Substitute(cell, "Impact:", "@")
+        cell = WorksheetFunction.Substitute(cell, "Remote value: ", "@")
+        cell = WorksheetFunction.Substitute(cell, "Policy value:", "@")
+    Next
+End Sub
+
+Sub ExampleSplit1()
+    Set rng = Sheets("Sheet1").Range("B2:B18")
+    Selection.TextToColumns _
+      Destination:=rng, _
+      DataType:=xlDelimited, _
+      TextQualifier:=xlDoubleQuote, _
+      ConsecutiveDelimiter:=False, _
+      Tab:=True, _
+      Semicolon:=False, _
+      Comma:=False, _
+      Space:=False, _
+      Other:=True, _
+      OtherChar:="@"
+End Sub
