@@ -12,7 +12,7 @@ i used to do these steps manually.
 Just click on B2 run methods 1) SUBS 2)Replace_For_Nessus 3)ExampleSplit1 in order 
 
 
-> <b>Things to Keep in Mind </b> <br>
+<b>Things to Keep in Mind </b> <br>
 > Only works with Nessus Windows Compliance raw report.<br>
 > Change B2:B16 position with the number of rows in your column.<br>
 > Sheet-1 must be the name of sheet and click on B2 before running the Macro. <br>
