@@ -3,8 +3,8 @@ Here i present you the best macro you can use to parse Windows compliance by Usi
 
 How it Works?
 i used to do these steps manually.
-> Substitute
-> Replace
-> Text-To-Columns
+> Substitute <br>
+> Replace <br>
+> Text-To-Columns <br>
 
 How to use Macro?
